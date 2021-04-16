@@ -10,6 +10,6 @@ namespace VirtualClosetAPI.Models
             {
             }
 
-            public DbSet<VirtualCloset> VirtualClosetItems { get; set; }
+            public DbSet<VirtualClosetEntity> VirtualClosetItems { get; set; }
         }
     }

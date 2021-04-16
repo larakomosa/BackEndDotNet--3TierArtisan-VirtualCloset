@@ -1,7 +1,7 @@
 ﻿using System;
 namespace VirtualClosetAPI.Models
 {
-    public class VirtualCloset
+    public class VirtualClosetEntity
     {
         public long Id { get; set; }
         public string Name { get; set; }
