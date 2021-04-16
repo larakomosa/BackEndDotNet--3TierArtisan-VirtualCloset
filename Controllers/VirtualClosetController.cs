@@ -93,7 +93,7 @@ namespace VirtualClosetAPI.Controllers
             _context.VirtualClosetItems.Add(virtualCloset);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetVirtualCloset", new { id = virtualCloset.Id }, virtualCloset);
+            return CreatedAtAction(nameof(GetVirtualCloset), new { id = virtualCloset.Id }, virtualCloset);
         }
 
         // DELETE: api/VirtualCloset/5
