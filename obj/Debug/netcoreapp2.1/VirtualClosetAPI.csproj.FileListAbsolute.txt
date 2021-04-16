@@ -1,0 +1,17 @@
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/appsettings.Development.json
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/appsettings.json
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/VirtualClosetAPI.deps.json
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/VirtualClosetAPI.runtimeconfig.json
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/VirtualClosetAPI.runtimeconfig.dev.json
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/VirtualClosetAPI.dll
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/bin/Debug/netcoreapp2.1/VirtualClosetAPI.pdb
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.csprojAssemblyReference.cache
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.AssemblyInfoInputs.cache
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.AssemblyInfo.cs
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.csproj.CoreCompileInputs.cache
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.RazorAssemblyInfo.cache
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.RazorAssemblyInfo.cs
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.RazorTargetAssemblyInfo.cache
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.dll
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.pdb
+/Users/lara.komosa/Documents/VirtualClosetAPI/VirtualClosetAPI/obj/Debug/netcoreapp2.1/VirtualClosetAPI.genruntimeconfig.cache
