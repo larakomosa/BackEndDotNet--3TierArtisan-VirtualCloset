@@ -13,113 +13,25 @@ namespace VirtualClosetAPI.Controllers
     [ApiController]
     public class VirtualClosetController : ControllerBase
     {
-        private readonly VirtualClosetContext _context;
+        private readonly IVirtualClosetManager _manager;
 
-        public VirtualClosetController(VirtualClosetContext context)
+        public VirtualClosetController(IVirtualClosetManager manager)
         {
-            _context = context;
+            _manager = manager;
         }
 
-        // GET: api/VirtualCloset
-        [HttpGet]
-        public IEnumerable<VirtualCloset> GetVirtualClosetItems()
-        {
-            return _context.VirtualClosetItems;
-        }
-
-        // GET: api/VirtualCloset/5
+        // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetVirtualCloset([FromRoute] long id)
+        public async Task<ActionResult<VirtualCloset>> GetTodoItem(long id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var todoItem = await _manager.Get(new long[] { id });
 
-            var virtualCloset = await _context.VirtualClosetItems.FindAsync(id);
-
-            if (virtualCloset == null)
+            if (todoItem == null)
             {
                 return NotFound();
             }
 
-            return Ok(virtualCloset);
-        }
-
-        // PUT: api/VirtualCloset/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutVirtualCloset([FromRoute] long id, [FromBody] VirtualCloset virtualCloset)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != virtualCloset.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(virtualCloset).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!VirtualClosetExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/VirtualCloset
-        [HttpPost]
-        public async Task<IActionResult> PostVirtualCloset([FromBody] VirtualCloset virtualCloset)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            _context.VirtualClosetItems.Add(virtualCloset);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetVirtualCloset), new { id = virtualCloset.Id }, virtualCloset);
-        }
-
-        // DELETE: api/VirtualCloset/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteVirtualCloset([FromRoute] long id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var virtualCloset = await _context.VirtualClosetItems.FindAsync(id);
-            if (virtualCloset == null)
-            {
-                return NotFound();
-            }
-
-            _context.VirtualClosetItems.Remove(virtualCloset);
-            await _context.SaveChangesAsync();
-
-            return Ok(virtualCloset);
-        }
-
-        private bool VirtualClosetExists(long id)
-        {
-            return _context.VirtualClosetItems.Any(e => e.Id == id);
+            return Ok(todoItem);
         }
     }
 }

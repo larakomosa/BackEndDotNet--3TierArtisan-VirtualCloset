@@ -10,6 +10,9 @@
     <Folder Include="Data\" />
     <Folder Include="Data\Entities\" />
     <Folder Include="Data\Impl\" />
+    <Folder Include="Biz\" />
+    <Folder Include="Biz\Models\" />
+    <Folder Include="Biz\Impl\" />
   </ItemGroup>
 
   <ItemGroup>
