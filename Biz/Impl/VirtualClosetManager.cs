@@ -19,11 +19,20 @@ namespace VirtualClosetAPI.Biz.Impl
         {
             this.closetContext = closetContext;
         }
+
         public async Task<IEnumerable<VirtualCloset>> Get(IEnumerable<long> closetIds)
         {
 
             return await closetContext.VirtualClosetItems
                 .Where(item => closetIds.Contains(item.Id))
+                .Select(item => new VirtualCloset { Id = item.Id, Name = item.Name, Category = item.Category, Favorite = item.Favorite })
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<VirtualCloset>> Get()
+        {
+
+            return await closetContext.VirtualClosetItems
                 .Select(item => new VirtualCloset { Id = item.Id, Name = item.Name, Category = item.Category, Favorite = item.Favorite })
                 .ToListAsync();
         }

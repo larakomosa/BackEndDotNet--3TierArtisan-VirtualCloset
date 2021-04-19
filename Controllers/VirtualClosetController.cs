@@ -22,18 +22,32 @@ namespace VirtualClosetAPI.Controllers
             _manager = manager;
         }
 
-        // GET: api/TodoItems/5
+        // GET: api/VirtualCloset/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<VirtualCloset>> GetTodoItem(long id)
+        public async Task<ActionResult<VirtualCloset>> GetClosetItem(long id)
         {
-            var todoItem = await _manager.Get(new long[] { id });
+            var closetItem = await _manager.Get(new long[] { id });
 
-            if (todoItem == null)
+            if (closetItem == null)
             {
                 return NotFound();
             }
 
-            return Ok(todoItem);
+            return Ok(closetItem);
+        }
+
+        // GET: api/VirtualCloset
+        [HttpGet]
+        public async Task<ActionResult<VirtualCloset>> GetClosetItems()
+        {
+            var closetItems = await _manager.Get();
+
+            if (closetItems == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(closetItems);
         }
     }
 }
