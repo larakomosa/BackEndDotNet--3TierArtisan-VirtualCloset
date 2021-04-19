@@ -28,19 +28,107 @@
     ".NETCoreApp,Version=v2.1": {
       "VirtualClosetAPI/1.0.0": {
         "dependencies": {
+          "Artisan.Core": "1.0.0",
+          "Artisan.Core.Bootstrap.StructureMap": "1.0.0",
+          "Artisan.Service.Core": "2.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.EntityFrameworkCore.Design": "2.1.1",
           "Microsoft.EntityFrameworkCore.InMemory": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
+          "StructureMap.Microsoft.DependencyInjection": "2.0.0"
         },
         "runtime": {
           "VirtualClosetAPI.dll": {}
         },
         "compile": {
           "VirtualClosetAPI.dll": {}
+        }
+      },
+      "Artisan.Core/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Data.Common": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime.Serialization.Formatters": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Artisan.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Artisan.Core.dll": {}
+        }
+      },
+      "Artisan.Core.Bootstrap.StructureMap/1.0.0": {
+        "dependencies": {
+          "Artisan.Core": "1.0.0",
+          "CommonServiceLocator": "2.0.2",
+          "StructureMap": "4.6.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Artisan.Core.Bootstrap.StructureMap.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Artisan.Core.Bootstrap.StructureMap.dll": {}
+        }
+      },
+      "Artisan.Core.Data/2.0.0": {
+        "dependencies": {
+          "Artisan.Core": "1.0.0",
+          "NETStandard.Library": "2.0.3",
+          "System.Data.Common": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime.Serialization.Formatters": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.4/Artisan.Core.Data.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.4/Artisan.Core.Data.dll": {}
+        }
+      },
+      "Artisan.Service.Core/2.0.0": {
+        "dependencies": {
+          "Artisan.Core": "1.0.0",
+          "Artisan.Core.Data": "2.0.0",
+          "CommonServiceLocator": "2.0.2",
+          "System.Data.Common": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime.Serialization.Formatters": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Artisan.Service.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Artisan.Service.Core.dll": {}
+        }
+      },
+      "CommonServiceLocator/2.0.2": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "2.1.0"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/CommonServiceLocator.dll": {
+            "assemblyVersion": "2.0.2.0",
+            "fileVersion": "2.0.2.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp1.0/CommonServiceLocator.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -213,6 +301,38 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "StructureMap/4.6.1": {
+        "dependencies": {
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
+          "System.Runtime.Loader": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/StructureMap.dll": {
+            "assemblyVersion": "4.6.1.0",
+            "fileVersion": "4.6.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/StructureMap.dll": {}
+        }
+      },
+      "StructureMap.Microsoft.DependencyInjection/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.1",
+          "StructureMap": "4.6.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/StructureMap.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/StructureMap.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -336,6 +456,18 @@
           "lib/netstandard1.0/System.Composition.TypedParts.dll": {}
         }
       },
+      "System.Data.Common/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        }
+      },
       "System.Linq.Parallel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -348,6 +480,23 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Reflection.TypeExtensions/4.4.0": {},
+      "System.Runtime.Loader/4.3.0": {
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Runtime.Serialization.Formatters/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Serialization.Primitives": "4.3.0"
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -1633,7 +1782,7 @@
           "System.Collections": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
@@ -2699,7 +2848,7 @@
           "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -2834,7 +2983,7 @@
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -2930,7 +3079,7 @@
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -3000,13 +3149,6 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0",
           "Microsoft.NETCore.Targets": "2.1.0",
-          "System.Runtime": "4.3.0"
-        },
-        "compileOnly": true
-      },
-      "System.Reflection.TypeExtensions/4.3.0": {
-        "dependencies": {
-          "System.Reflection": "4.3.0",
           "System.Runtime": "4.3.0"
         },
         "compileOnly": true
@@ -3432,7 +3574,7 @@
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -3478,6 +3620,41 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Artisan.Core/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N2Avdkakibn1Valvi8Jd7L+19tKl0NSZZai9xN2m/3qEQDNvD0oBTNS4z2BPz4jEWdAFASegPLWnStcOep0Mgw==",
+      "path": "artisan.core/1.0.0",
+      "hashPath": "artisan.core.1.0.0.nupkg.sha512"
+    },
+    "Artisan.Core.Bootstrap.StructureMap/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q+oGAluGtGDJyPvYwxfIPpP7ExiX9IZGNZq+q/8kEOu3+L1kbOWpvyjRk9giBc3DqVDBLy2bnf8XgEYmZ+XvGQ==",
+      "path": "artisan.core.bootstrap.structuremap/1.0.0",
+      "hashPath": "artisan.core.bootstrap.structuremap.1.0.0.nupkg.sha512"
+    },
+    "Artisan.Core.Data/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3057YZV5i7CVKW29ERB+m8WilCbll8FdRYRVA3huC3LTaPPd3dBTrrxrNssXiz9YD+ooH0fa2tKaje8NnI4xaw==",
+      "path": "artisan.core.data/2.0.0",
+      "hashPath": "artisan.core.data.2.0.0.nupkg.sha512"
+    },
+    "Artisan.Service.Core/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MkRcWK1Zb3iDl6p5il8gzXhvyx941tB8RkWzOEMTC/cjyHStlm2YyNxh/QnKQ9ZTUU66Jvsxo2TsQiNfiQ7XmA==",
+      "path": "artisan.service.core/2.0.0",
+      "hashPath": "artisan.service.core.2.0.0.nupkg.sha512"
+    },
+    "CommonServiceLocator/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OeAz2cDGiQuaxpJ2pUm1xyZyklT2HgP5LHoumI0o/pcXdTweJMjKHu92JKa33pZRCrRI0DdPcE5MGHk6GCpDMQ==",
+      "path": "commonservicelocator/2.0.2",
+      "hashPath": "commonservicelocator.2.0.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
@@ -3563,6 +3740,20 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
+    "StructureMap/4.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Zwp2bvFOS7bDC4UAD5TuJEbdLN9q0ly761vTzD2t+NqyDF0CpmuB2/8ZzwnVlzwPPSh1e4RqG4LRDx4fX3VdSw==",
+      "path": "structuremap/4.6.1",
+      "hashPath": "structuremap.4.6.1.nupkg.sha512"
+    },
+    "StructureMap.Microsoft.DependencyInjection/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-spA8Q/BVpng2ACbVpRw+v2qv5zWYGC0M9InYkOEeWPT8bLagoGqX3cs75D9wcFpXXO74W1tIpi2ve1JiMdFztQ==",
+      "path": "structuremap.microsoft.dependencyinjection/2.0.0",
+      "hashPath": "structuremap.microsoft.dependencyinjection.2.0.0.nupkg.sha512"
+    },
     "System.Composition/1.0.31": {
       "type": "package",
       "serviceable": true,
@@ -3605,12 +3796,40 @@
       "path": "system.composition.typedparts/1.0.31",
       "hashPath": "system.composition.typedparts.1.0.31.nupkg.sha512"
     },
+    "System.Data.Common/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
+      "path": "system.data.common/4.3.0",
+      "hashPath": "system.data.common.4.3.0.nupkg.sha512"
+    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-td7x21K8LalpjTWCzW/nQboQIFbq9i0r+PCyBBCdLWWnm4NBcdN18vpz/G9hCpUaCIfRL+ZxJNVTywlNlB1aLQ==",
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
+    },
+    "System.Reflection.TypeExtensions/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dkmh/ySlwnXJp/1qYP9uyKkCK1CXR/REFzl7abHcArxBcV91mY2CgrrzSRA5Z/X4MevJWwXsklGRdR3A7K9zbg==",
+      "path": "system.reflection.typeextensions/4.4.0",
+      "hashPath": "system.reflection.typeextensions.4.4.0.nupkg.sha512"
+    },
+    "System.Runtime.Loader/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DHMaRn8D8YCK2GG2pw+UzNxn/OHVfaWx7OTLBD/hPegHZZgcZh3H6seWegrC4BYwsfuGrywIuT+MQs+rPqRLTQ==",
+      "path": "system.runtime.loader/4.3.0",
+      "hashPath": "system.runtime.loader.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.Serialization.Formatters/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KT591AkTNFOTbhZlaeMVvfax3RqhH1EJlcwF50Wm7sfnBLuHiOeZRRKrr1ns3NESkM20KPZ5Ol/ueMq5vg4QoQ==",
+      "path": "system.runtime.serialization.formatters/4.3.0",
+      "hashPath": "system.runtime.serialization.formatters.4.3.0.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
@@ -5242,13 +5461,6 @@
       "sha512": "sha512-5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
       "path": "system.reflection.primitives/4.3.0",
       "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
-    },
-    "System.Reflection.TypeExtensions/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
-      "path": "system.reflection.typeextensions/4.3.0",
-      "hashPath": "system.reflection.typeextensions.4.3.0.nupkg.sha512"
     },
     "System.Resources.ResourceManager/4.3.0": {
       "type": "package",

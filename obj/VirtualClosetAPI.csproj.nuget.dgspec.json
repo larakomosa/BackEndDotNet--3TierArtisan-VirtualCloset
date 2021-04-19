@@ -17,7 +17,7 @@
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/lara.komosa/.config/NuGet/NuGet.Config"
+          "/Users/lara.komosa/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -41,6 +41,18 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "dependencies": {
+            "Artisan.Core": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Artisan.Core.Bootstrap.StructureMap": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Artisan.Service.Core": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -73,6 +85,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.1.1, )"
+            },
+            "StructureMap.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             }
           },
           "imports": [
