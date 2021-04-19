@@ -41,8 +41,17 @@ namespace VirtualClosetAPI.Data.Impl
 
             await closetContext.SaveChangesAsync();
 
-            return null;
+            return change;
 
+        }
+        async public Task<VirtualCloset> Delete(long id)
+        {
+            var item = await closetContext.VirtualClosetItems.FindAsync(id);
+            closetContext.VirtualClosetItems.Remove(item);
+
+            await closetContext.SaveChangesAsync();
+
+            return item;
         }
     }
 }

@@ -73,5 +73,16 @@ namespace VirtualClosetAPI.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTask([FromRoute] long id)
+        {
+            await _manager.Delete(id);
+
+            //    return new OkResult();
+            //}
+            return new OkResult();
+        }
+
     }
 }

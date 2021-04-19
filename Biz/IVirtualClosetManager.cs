@@ -35,5 +35,11 @@ namespace VirtualClosetAPI.Controllers
         /// <param name="info">The unique identifiers of the clients to get.</param>
         /// <returns>The requested clients.</returns>
         Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info);
+        /// <summary>
+        /// Get a set clients by their unique identifiers.
+        /// </summary>
+        /// <param name="info">The unique identifiers of the clients to get.</param>
+        /// <returns>The requested clients.</returns>
+        Task<VirtualCloset> Delete(long id);
     }
 }

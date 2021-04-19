@@ -54,5 +54,10 @@ namespace VirtualClosetAPI.Biz.Impl
             return await virtualClosetDao.Update(id, info);
         }
 
+        public async Task<VirtualCloset> Delete(long id)
+        {
+            return await virtualClosetDao.Delete(id);
+        }
+
     }
 }
