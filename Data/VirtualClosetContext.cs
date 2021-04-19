@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using VirtualClosetAPI.Biz.Models;
 
 namespace VirtualClosetAPI.Models
 {
@@ -10,6 +11,6 @@ namespace VirtualClosetAPI.Models
             {
             }
 
-            public DbSet<VirtualClosetEntity> VirtualClosetItems { get; set; }
+            public DbSet<VirtualCloset> VirtualClosetItems { get; set; }
         }
     }

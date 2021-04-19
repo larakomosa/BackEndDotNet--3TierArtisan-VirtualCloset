@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 using VirtualClosetAPI.Models;
 using VirtualClosetAPI.Controllers;
 using VirtualClosetAPI.Biz.Impl;
+using VirtualClosetAPI.Data;
+using VirtualClosetAPI.Data.Impl;
 
 namespace VirtualClosetAPI
 {
@@ -33,6 +35,7 @@ namespace VirtualClosetAPI
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddTransient<IVirtualClosetDao, VirtualClosetDao>();
             services.AddTransient<IVirtualClosetManager, VirtualClosetManager>();
             services.AddDbContext<VirtualClosetContext>(opt =>
             {

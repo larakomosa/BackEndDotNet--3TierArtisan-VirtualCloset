@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VirtualClosetAPI.Models;
+using VirtualClosetAPI.Common;
+using VirtualClosetAPI.Biz.Models;
 
 namespace VirtualClosetAPI.Controllers
 {
@@ -48,6 +50,18 @@ namespace VirtualClosetAPI.Controllers
             }
 
             return Ok(closetItems);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> PostClosetItem([FromBody] CreateVirtualClosetItemMessage request)
+        {
+
+            var info = new CreateVirtualClosetItemInfo(request.Name, request.Category, request.Favorite);
+
+            await _manager.Create(info);
+
+            return new OkObjectResult(info);
+
         }
     }
 }
