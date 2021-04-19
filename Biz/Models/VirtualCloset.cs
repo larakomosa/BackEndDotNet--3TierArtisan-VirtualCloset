@@ -1,4 +1,7 @@
-﻿namespace VirtualClosetAPI.Biz.Models
+﻿using System;
+using System.Threading.Tasks;
+
+namespace VirtualClosetAPI.Biz.Models
 {
     public class VirtualCloset
     {
@@ -27,6 +30,11 @@
         public VirtualCloset()
         {
 
+        }
+
+        internal static Task SaveChangesAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

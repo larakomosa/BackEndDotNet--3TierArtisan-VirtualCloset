@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Common;
 using VirtualClosetAPI.Controllers;
@@ -24,6 +25,23 @@ namespace VirtualClosetAPI.Data.Impl
             await closetContext.SaveChangesAsync();
 
             return item;
+
+        }
+
+        async public Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info)
+
+        {
+            var change = await closetContext.VirtualClosetItems
+                .FirstAsync(i => i.Id == id);
+
+            change.Name = info.Name;
+            change.Category = info.Category;
+            change.
+                Favorite= info.Favorite;
+
+            await closetContext.SaveChangesAsync();
+
+            return null;
 
         }
     }

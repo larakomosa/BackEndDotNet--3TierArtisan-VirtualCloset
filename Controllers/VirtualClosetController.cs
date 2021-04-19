@@ -63,5 +63,15 @@ namespace VirtualClosetAPI.Controllers
             return new OkObjectResult(info);
 
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateClosetItem([FromRoute] long id, [FromBody] UpdateVirtualClosetItemMessage request)
+        {
+            var info = new UpdateVirtualClosetItemInfo(request.Name, request.Category, request.Favorite);
+
+            await _manager.Update(id, info);
+
+            return NoContent();
+        }
     }
 }

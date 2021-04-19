@@ -49,5 +49,10 @@ namespace VirtualClosetAPI.Biz.Impl
             return await virtualClosetDao.Create(info);
         }
 
+        public async Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info)
+        {
+            return await virtualClosetDao.Update(id, info);
+        }
+
     }
 }

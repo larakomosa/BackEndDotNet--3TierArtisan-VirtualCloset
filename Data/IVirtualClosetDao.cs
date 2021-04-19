@@ -9,5 +9,7 @@ namespace VirtualClosetAPI.Data
         internal interface IVirtualClosetDao
         {
             Task<VirtualCloset> Create(CreateVirtualClosetItemInfo info);
-        }
+        Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info);
+
     }
+}
