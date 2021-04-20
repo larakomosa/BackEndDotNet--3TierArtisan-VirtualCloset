@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using VirtualClosetAPI.Biz.Impl;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Models;
 
@@ -14,31 +15,26 @@ namespace ToDoApplicationAPI.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly VirtualClosetContext _context;
+        private readonly ICategoryManager _manager;
 
-        public CategoryController(VirtualClosetContext context)
+        public CategoryController(ICategoryManager manager)
         {
-            _context = context;
+            _manager = manager;
         }
 
         // GET: api/TodoItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetTodoItems()
+        public async Task<ActionResult<Category>> GetCategory()
         {
-            return await _context.Categories.ToListAsync();
+            var todoItem = await _manager.Get();
+
+            if (todoItem == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(todoItem);
         }
-
-        // POST: api/TodoItems
-        [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
-        {
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetTodoItems), new { id = category.Id
-    }, category);
-}
-
 
 
      

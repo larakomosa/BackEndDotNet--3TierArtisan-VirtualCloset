@@ -27,6 +27,7 @@ using StructureMap;
 using Container = StructureMap.Container;
 using CommonServiceLocator;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+using IVirtualClosetDao = VirtualClosetAPI.Data.IVirtualClosetDao;
 
 namespace VirtualClosetAPI
 {
@@ -48,6 +49,7 @@ namespace VirtualClosetAPI
 
             services.AddTransient<IMessageBuilder<VirtualCloset, VirtualClosetResponse>, VirtualClosetResponseBuilder>();
             services.AddTransient<IVirtualClosetDao, VirtualClosetDao>();
+            services.AddTransient<ICategoryManager, CategoryManager>();
             services.AddTransient<IVirtualClosetManager, VirtualClosetManager>();
             services.AddDbContext<VirtualClosetContext>(opt =>
             {
