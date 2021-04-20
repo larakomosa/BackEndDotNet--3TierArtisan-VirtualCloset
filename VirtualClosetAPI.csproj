@@ -15,6 +15,10 @@
     <Folder Include="Bootstrap\" />
     <Folder Include="Controllers\Web\" />
     <Folder Include="Common\" />
+    <Folder Include="Controllers\Contracts\" />
+    <Folder Include="Controllers\Builders\" />
+    <Folder Include="Controllers\Extensions\" />
+    <Folder Include="Data\Extensions\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +35,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
      <PackageReference Include="Artisan.Service.Core" Version="2.0.0" />
+         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.11" />
+
   </ItemGroup>
 
 </Project>

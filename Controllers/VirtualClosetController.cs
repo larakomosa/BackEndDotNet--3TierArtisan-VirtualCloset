@@ -10,6 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using VirtualClosetAPI.Models;
 using VirtualClosetAPI.Common;
 using VirtualClosetAPI.Biz.Models;
+using VirtualClosetAPI.Controllers.Contracts;
+using VirtualClosetAPI.Controllers.Web;
+using VirtualClosetAPI.Biz.Impl;
+using Artisan.Service.Core.Web;
 
 namespace VirtualClosetAPI.Controllers
 {
@@ -18,10 +22,13 @@ namespace VirtualClosetAPI.Controllers
     public class VirtualClosetController : ControllerBase
     {
         private readonly IVirtualClosetManager _manager;
+        private readonly IMessageFactory _factory;
 
-        public VirtualClosetController(IVirtualClosetManager manager)
+        public VirtualClosetController(IVirtualClosetManager manager, IMessageFactory factory)
         {
             _manager = manager;
+            _factory = factory;
+
         }
 
         // GET: api/VirtualCloset/5
@@ -83,6 +90,20 @@ namespace VirtualClosetAPI.Controllers
             //}
             return new OkResult();
         }
+
+        [HttpGet("search")]
+        public async Task<SearchResponse<VirtualClosetResponse>> SearchTodoList([FromQuery] long id, [FromQuery] string name, [FromQuery] string category, [FromQuery] bool? favorite)
+
+        {
+            var info = new SearchVirtualClosetItemInfo(id, name, category, favorite);
+
+            var results = await _manager.Search(info);
+
+            var responses = await _factory.Create<VirtualCloset, VirtualClosetResponse>(results.Data);
+
+            return new SearchResponse<VirtualClosetResponse>(responses, results.TotalCount);
+        }
+
 
     }
 }

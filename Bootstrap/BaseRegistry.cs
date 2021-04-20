@@ -2,7 +2,7 @@
 using System;
 using Artisan.Core.Bootstrap;
 
-namespace ToDoApplicationAPI.Bootstrap
+namespace VirtualClosetAPI.Bootstrap
 {
     /// <summary>
     /// The base structure map registry. 

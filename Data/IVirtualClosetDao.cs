@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using VirtualClosetAPI.Biz.Impl;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Common;
 using VirtualClosetAPI.Controllers;
+using VirtualClosetAPI.Controllers.Web;
 
 namespace VirtualClosetAPI.Data
 {
@@ -11,6 +13,8 @@ namespace VirtualClosetAPI.Data
         Task<VirtualCloset> Create(CreateVirtualClosetItemInfo info);
         Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info);
         Task<VirtualCloset> Delete(long id);
+        Task<SearchResponse<VirtualCloset>> Search(SearchVirtualClosetItemInfo info);
+
 
     }
 }

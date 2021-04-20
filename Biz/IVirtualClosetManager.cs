@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using VirtualClosetAPI.Biz.Impl;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Common;
+using VirtualClosetAPI.Controllers.Web;
 
 namespace VirtualClosetAPI.Controllers
 {
@@ -41,5 +43,9 @@ namespace VirtualClosetAPI.Controllers
         /// <param name="info">The unique identifiers of the clients to get.</param>
         /// <returns>The requested clients.</returns>
         Task<VirtualCloset> Delete(long id);
+        /// <summary>
+        /// Search for An Item
+        /// </summary>
+        Task<SearchResponse<VirtualCloset>> Search(SearchVirtualClosetItemInfo info);
     }
 }

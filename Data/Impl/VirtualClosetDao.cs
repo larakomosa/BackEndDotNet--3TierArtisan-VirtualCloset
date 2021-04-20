@@ -5,6 +5,11 @@ using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Common;
 using VirtualClosetAPI.Controllers;
 using VirtualClosetAPI.Models;
+using VirtualClosetAPI.Controllers.Contracts;
+using VirtualClosetAPI.Controllers.Web;
+using System.Linq;
+using VirtualClosetAPI.Biz.Impl;
+using System.Collections.Generic;
 
 namespace VirtualClosetAPI.Data.Impl
 {
@@ -53,5 +58,22 @@ namespace VirtualClosetAPI.Data.Impl
 
             return item;
         }
+
+        public async Task<SearchResponse<VirtualCloset>> Search(SearchVirtualClosetItemInfo info)
+        {
+            var query = closetContext.VirtualClosetItems
+            .Where(c => c.Name.StartsWith((string)info.Name))
+            .AsQueryable()
+            .AsNoTracking();
+
+            int count = await query.CountAsync();
+            List<VirtualCloset> results = await query
+                .OrderBy(c => c.Id)
+                .ToListAsync();
+
+            return new SearchResponse<VirtualCloset>(results, count);
+
+        }
+
     }
 }
