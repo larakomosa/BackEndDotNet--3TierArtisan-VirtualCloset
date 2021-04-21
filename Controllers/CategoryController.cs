@@ -22,7 +22,7 @@ namespace ToDoApplicationAPI.Controllers
             _manager = manager;
         }
 
-        // GET: api/TodoItems
+        // GET: api/Category
         [HttpGet]
         public async Task<ActionResult<Category>> GetCategory()
         {
@@ -36,7 +36,32 @@ namespace ToDoApplicationAPI.Controllers
             return Ok(todoItem);
         }
 
+        // GET: api/Category/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Category>> GetClosetItem(long id)
+        {
+            var categoryItem = await _manager.Get(new long[] { id });
 
-     
+            if (categoryItem == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(categoryItem);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> PostClosetItem([FromBody] CreateCategoryItemMessage request)
+        {
+
+            var info = new CreateCategoryItemInfo(request.Name);
+
+            await _manager.Create(info);
+
+            return new OkObjectResult(info);
+
+        }
+
+
     }
 }

@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Threading.Tasks;
+using ToDoApplicationAPI.Controllers;
+using VirtualClosetAPI.Biz.Models;
+
 namespace VirtualClosetAPI.Data.Impl
 {
-        internal interface ICategoryDao
-        {
+    internal interface ICategoryDao
+    {
+        Task<Category> Create(CreateCategoryItemInfo info);
 
-        }
     }
-
+}
