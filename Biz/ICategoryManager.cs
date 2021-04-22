@@ -1,31 +1,39 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using ToDoApplicationAPI.Controllers;
 using VirtualClosetAPI.Biz.Models;
+using VirtualClosetAPI.Controllers;
 
 namespace VirtualClosetAPI.Biz.Impl
 {
     public interface ICategoryManager
     {
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Get a set clients
         /// </summary>
-        /// <param name="closetIds">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <returns>Get all categories.</returns>
         Task<IEnumerable<Category>> Get();
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Get a set category by their unique identifiers.
         /// </summary>
-        /// <param name="closetIds">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <returns>The requested category.</returns>
         Task<IEnumerable<Category>> Get(IEnumerable<long> categoryIds);
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// create a category
         /// </summary>
-        /// <param name="info">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <param name="info">The category info to be added to table.</param>
+        /// <returns>OK.</returns>
         Task<Category> Create(CreateCategoryItemInfo info);
+        /// <summary>
+        /// update a category
+        /// </summary>
+        /// <param name="info">The category info to be updated on table.</param>
+        /// <returns>OK.</returns>
         Task<Category> Update(long id, UpdateCategoryItemInfo info);
+        /// <summary>
+        /// delete a category
+        /// </summary>
+        /// <param name="id">The category to be deleted from the table.</param>
+        /// <returns>OK</returns>
         Task<Category> Delete(long id);
     }
 }

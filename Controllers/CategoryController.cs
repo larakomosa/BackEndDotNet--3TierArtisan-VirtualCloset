@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using VirtualClosetAPI.Controllers;
 using VirtualClosetAPI.Biz.Impl;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Models;
 
-namespace ToDoApplicationAPI.Controllers
+namespace VirtualClosetAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

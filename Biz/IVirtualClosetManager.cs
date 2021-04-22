@@ -15,36 +15,36 @@ namespace VirtualClosetAPI.Controllers
     public interface IVirtualClosetManager
     {
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Get a closet item by it's unique identifier.
         /// </summary>
         /// <param name="closetIds">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <returns>The requested closet item.</returns>
         Task<IEnumerable<VirtualCloset>> Get(IEnumerable<long> closetIds);
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Get all closet items
         /// </summary>
-        /// <returns>The requested clients.</returns>
+        /// <returns>The requested closet items.</returns>
         Task<IEnumerable<VirtualCloset>> Get();
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Create a closet item 
         /// </summary>
-        /// <param name="info">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <param name="info">The category info to be added to table.</param>
+        /// <returns>OK</returns>
         Task<VirtualCloset> Create(CreateVirtualClosetItemInfo info);
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Get a set closet items by their unique identifiers.
         /// </summary>
-        /// <param name="info">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <param name="info">The unique identifiers of the closet item to update.</param>
+        /// <returns>OK.</returns>
         Task<VirtualCloset> Update(long id, UpdateVirtualClosetItemInfo info);
         /// <summary>
-        /// Get a set clients by their unique identifiers.
+        /// Delete a closet item by their unique identifiers.
         /// </summary>
-        /// <param name="info">The unique identifiers of the clients to get.</param>
-        /// <returns>The requested clients.</returns>
+        /// <param name="id">The unique identifiers of the closet item to delete.</param>
+        /// <returns>OK</returns>
         Task<VirtualCloset> Delete(long id);
         /// <summary>
-        /// Search for An Item
+        /// Search for an Item
         /// </summary>
         Task<SearchResponse<VirtualCloset>> Search(SearchVirtualClosetItemInfo info);
     }

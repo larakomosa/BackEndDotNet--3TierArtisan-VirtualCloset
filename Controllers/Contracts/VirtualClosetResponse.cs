@@ -23,25 +23,25 @@ namespace VirtualClosetAPI.Controllers.Contracts
         }
 
         /// <summary>
-        /// Foreign key to the client this user belongs to.
+        /// unique identifier of closet item
         /// </summary>
         [Required]
         public long Id { get; set; }
 
         /// <summary>
-        /// The username on the account.
+        /// The name of the closet item.
         /// </summary>
         [Required]
         public string Name { get; set; }
 
         /// <summary>
-        /// The username on the account.
+        /// The category of the closet item.
         /// </summary>
         [Required]
         public string Category { get; set; }
 
         /// <summary>
-        /// Weather or not the user is active.
+        /// Weather or not the item is a favorite.
         /// </summary>
         public bool Favorite { get; set; }
     }

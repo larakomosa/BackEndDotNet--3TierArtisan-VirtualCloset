@@ -1,4 +1,4 @@
-﻿namespace ToDoApplicationAPI.Controllers
+﻿namespace VirtualClosetAPI.Controllers
 {
     public class CreateCategoryItemInfo
     {

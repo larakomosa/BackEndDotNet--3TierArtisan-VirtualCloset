@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ToDoApplicationAPI.Controllers;
+using VirtualClosetAPI.Controllers;
 using VirtualClosetAPI.Biz.Models;
 using VirtualClosetAPI.Data.Impl;
 using VirtualClosetAPI.Models;

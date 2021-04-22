@@ -9,7 +9,7 @@ using VirtualClosetAPI.Controllers.Extensions;
 namespace VirtualClosetAPI.Controllers.Builders
 {
     /// <summary>
-    /// Converts <see cref="Account"/> models to <see cref="AccountResponse"/>.
+    /// Converts <see cref="VirtualCloset"/> models to <see cref="VirtualClosetResponse"/>.
     /// </summary>
     internal class VirtualClosetResponseBuilder : IMessageBuilder<VirtualCloset, VirtualClosetResponse>
     {
