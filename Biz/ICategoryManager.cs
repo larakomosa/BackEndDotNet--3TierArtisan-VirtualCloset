@@ -25,5 +25,7 @@ namespace VirtualClosetAPI.Biz.Impl
         /// <param name="info">The unique identifiers of the clients to get.</param>
         /// <returns>The requested clients.</returns>
         Task<Category> Create(CreateCategoryItemInfo info);
+        Task<Category> Update(long id, UpdateCategoryItemInfo info);
+        Task<Category> Delete(long id);
     }
 }

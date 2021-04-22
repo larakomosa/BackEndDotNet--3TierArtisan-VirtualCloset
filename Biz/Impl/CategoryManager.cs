@@ -44,5 +44,15 @@ namespace VirtualClosetAPI.Biz.Impl
 
             return await categoryDao.Create(info);
         }
+
+        public async Task<Category> Update(long id, UpdateCategoryItemInfo info)
+        {
+            return await categoryDao.Update(id, info);
+        }
+
+        public async Task<Category> Delete(long id)
+        {
+            return await categoryDao.Delete(id);
+        }
     }
 }

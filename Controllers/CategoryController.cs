@@ -62,6 +62,26 @@ namespace ToDoApplicationAPI.Controllers
 
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateClosetItem([FromRoute] long id, [FromBody] UpdateCategoryItemMessage request)
+        {
+            var info = new UpdateCategoryItemInfo(request.Name);
+
+            await _manager.Update(id, info);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteTask([FromRoute] long id)
+        {
+            await _manager.Delete(id);
+
+            //    return new OkResult();
+            //}
+            return new OkResult();
+        }
+
 
     }
 }
